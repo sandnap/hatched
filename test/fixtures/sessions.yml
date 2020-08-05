@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_start_time: 2020-08-04 20:38:58
+  actual_start_time: 2020-08-04 20:38:58
+  scheduled_minutes: 1
+  actual_minutes: 1
+  topic: MyText
+  user: one
+
+two:
+  scheduled_start_time: 2020-08-04 20:38:58
+  actual_start_time: 2020-08-04 20:38:58
+  scheduled_minutes: 1
+  actual_minutes: 1
+  topic: MyText
+  user: two
