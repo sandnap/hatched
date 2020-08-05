@@ -58,3 +58,6 @@ Follow the [guide on rubyonrails.org](https://guides.rubyonrails.org/getting_sta
 `rake db:create`  
 `rake db:seed`  
 
+## The DB Schema so far
+
+![DB Diagram](https://oc-resources.s3-us-west-2.amazonaws.com/images/hatched_db.png)
