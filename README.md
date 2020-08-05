@@ -31,6 +31,7 @@ Follow the [guide on rubyonrails.org](https://guides.rubyonrails.org/getting_sta
 3. In a terminal window at the root project directory run the following commands:
 
 `rake db:create`  
+`rake db:migrate`  
 `rake db:seed`
 
 4. Start the rails server with:
@@ -56,6 +57,7 @@ Follow the [guide on rubyonrails.org](https://guides.rubyonrails.org/getting_sta
 5. In the container shell terminal create the database using the commands
 
 `rake db:create`  
+`rake db:migrate`  
 `rake db:seed`  
 
 ## The DB Schema so far
