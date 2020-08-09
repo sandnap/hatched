@@ -10,8 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render(Header::Header.new()) do %><% end %>
-    <%= yield %>
+  <body class="flex flex-col bg-gray-100">
+    <%= render(Header::Header.new(tabs: [{label: 'Users', path: users_path}, {label: 'Skills', path: '/skills'}], button_title: 'John Doe')) do %><% end %>
+    <div class="container self-center p-10 flex">
+      <div class="min-w-full">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

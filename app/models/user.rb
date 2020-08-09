@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :mentee_sessions, class_name: 'Session', foreign_key: :mentee_user_id
 
   scope :mentors, -> { joins :mentor }
+
+  def created_at_short
+    created_at.strftime('%m/%d/%Y')
+  end
+
+  def mentor?
+    !mentor.nil?
+  end
 end
