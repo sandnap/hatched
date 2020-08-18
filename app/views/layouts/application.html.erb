@@ -14,6 +14,8 @@
     <%= render(Header::Header.new(tabs: [{label: 'Users', path: users_path}, {label: 'Skills', path: '/skills'}], button_title: 'John Doe')) do %><% end %>
     <div class="container self-center p-10 flex">
       <div class="min-w-full">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>
     </div>
