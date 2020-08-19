@@ -13,9 +13,9 @@
   <body class="flex flex-col bg-gray-100">
     <%= render(Header::Header.new(tabs: [{label: 'Users', path: users_path}, {label: 'Skills', path: '/skills'}], button_title: 'John Doe')) do %><% end %>
     <div class="container self-center p-10 flex">
-      <div class="min-w-full">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+      <div class="w-full items-center flex flex-col">
+        <p class="notice mb-6 text-teal-600"><%= notice %></p>
+        <p class="alert mb-6 text-red-600"><%= alert %></p>
         <%= yield %>
       </div>
     </div>
