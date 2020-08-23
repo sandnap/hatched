@@ -35,6 +35,10 @@
 }
 
 @responsive {
+  .background-gray {
+    background-color: gray !important;
+  }
+
   .header-menu {
     max-height: 400px;
     overflow: hidden;
@@ -42,6 +46,30 @@
   }
 
   .header-menu-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.75s;
+  }
+
+  .user-options {
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 2.5s;
+  }
+
+  .user-options-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.75s;
+  }
+
+  .mentor-fields {
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 2.5s;
+  }
+
+  .mentor-fields-collapse {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.75s;

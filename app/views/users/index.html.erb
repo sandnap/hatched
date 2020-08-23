@@ -1,11 +1,9 @@
 <div>
-  <p id="notice"><%= notice %></p>
-
-  <h1>Users</h1>
-
+  <h1 class="flex font-bold mb-4">Users</h1>
   <%= render(DataTable::DataTable.new(
     model_name: 'user',
     column_model: [
+      {name: 'full_name', label: 'Name'},
       {name: 'email', label: 'Email'},
       {name: 'username', label: 'Username'},
       {name: 'phone', label: 'Phone'},
@@ -13,7 +11,11 @@
       {name: 'created_at_short', label: 'Created'},
     ],
     data: @users,
-    pagy: @pagy)) %>
-
-  <%= link_to 'New User', new_user_path %>
+    pagy: @pagy
+  )) %>
+  <div class="fixed bottom-0 right-0 mb-6 mr-6">
+    <%= link_to new_user_registration_path do %>
+      <svg viewBox="0 0 20 20" fill="teal" class="plus-circle w-16 h-16"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
+    <% end %>
+  </div>
 </div>
