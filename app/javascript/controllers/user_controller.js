@@ -40,8 +40,8 @@ export default class extends ApplicationController {
     let dataset = element.target.dataset
     this.stimulate("User#create_mentor", dataset)
     const classes = this.isMentorTarget.className
-    const showClass = 'mentor-fields'
-    const hideClass = 'mentor-fields-collapse'
+    const showClass = 'expandable-expand'
+    const hideClass = 'expandable-collapse'
     if (classes.includes(hideClass)) {
       this.isMentorTarget.className = classes.replace(hideClass, showClass)
     } else {

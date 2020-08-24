@@ -8,8 +8,8 @@ export default class extends ApplicationController {
 
   toggleMenu() {
     const classes = this.menuTarget.className
-    const showClass = ' md:header-menu'
-    const hideClass = ' md:header-menu-collapse'
+    const showClass = ' md:expandable-expand'
+    const hideClass = ' md:expandable-collapse'
     if (classes.includes(hideClass)) {
       this.menuTarget.className = classes.replace(hideClass, showClass)
     } else {
@@ -19,8 +19,8 @@ export default class extends ApplicationController {
 
   toggleUserOptions() {
     const classes = this.userOptionsTarget.className
-    const showClass = ' user-options'
-    const hideClass = ' user-options-collapse'
+    const showClass = ' expandable-expand'
+    const hideClass = ' expandable-collapse'
     if (classes.includes(hideClass)) {
       this.userOptionsTarget.className = classes.replace(hideClass, showClass)
     } else {
