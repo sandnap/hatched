@@ -2,14 +2,15 @@
 
 module Header
   class Header < ViewComponent::Base
-    def initialize(tabs: [], button_title: nil)
+    def initialize(tabs: [], button_title: nil, user_signed_in: false)
       @tabs = tabs
       @button_title = button_title
+      @user_signed_in = user_signed_in
     end
 
     private
 
-    attr_reader :tabs
+    attr_reader :tabs, :user_signed_in
 
     def tab_class(index)
       "#{tab_common_classes(index)} text-teal-200 hover:text-white"
