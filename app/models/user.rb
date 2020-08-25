@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :mentor_sessions, class_name: 'Session', foreign_key: :mentor_user_id
   has_many :mentee_sessions, class_name: 'Session', foreign_key: :mentee_user_id
 
-  validates_presence_of :email
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, on: %i[create update] }
 
   accepts_nested_attributes_for :mentor,
                                 reject_if: proc { |m| m['rate'].blank? },
