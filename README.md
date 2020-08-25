@@ -2,9 +2,22 @@
 
 A Ruby on Rails 6 project that will help people find mentors to schedule and facilitate mentoring sessions.
 
+## Technologies used
+
+- Ruby on Rails 6.0.3 :)
+- PostgreSQL
+- RSpec
+- Devise
+- [View Components](https://github.com/github/view_component)
+- [StimulusJS](https://stimulusjs.org/)
+- [StimulusReflex](https://docs.stimulusreflex.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Heroicons](https://heroicons.dev/)
+
+
 ## Status
 
-I am just getting started! There is nothing useful here quite yet.
+I am just getting started! User registration, login, password reset, profile, and admin interfaces are all that exist so far.
 
 ## Installation
 
