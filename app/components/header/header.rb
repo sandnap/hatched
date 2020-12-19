@@ -3,6 +3,7 @@
 module Header
   class Header < ViewComponent::Base
     def initialize(tabs: [], button_title: nil, user_signed_in: false)
+      super
       @tabs = tabs
       @button_title = button_title
       @user_signed_in = user_signed_in
