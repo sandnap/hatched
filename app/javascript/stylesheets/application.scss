@@ -1,0 +1,51 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./forms";
+@import "tailwindcss/utilities";
+
+
+// $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+// @import "@fortawesome/fontawesome-free/scss/fontawesome";
+// @import "@fortawesome/fontawesome-free/scss/regular";
+// @import "@fortawesome/fontawesome-free/scss/solid";
+
+.pagy-nav,
+.pagy-nav-js,
+.pagy-combo-nav-js {
+  @apply .inline-flex;
+}
+.pagy-nav .page,
+.pagy-nav-js .page,
+.pagy-combo-nav-js .page,
+.pagy-combo-nav-js .pagy-combo-input {
+  @apply .px-3 .py-1 .rounded-md;
+}
+.pagy-nav .page:hover,
+.pagy-nav-js .page:hover {
+  @apply .text-purple-900;
+}
+.pagy-nav .disabled,
+.pagy-nav-js .disabled,
+.pagy-combo-nav-js .disabled {
+  @apply .cursor-not-allowed;
+}
+.pagy-nav .active,
+.pagy-nav-js .active {
+  @apply .px-3 .py-1 .text-white .transition-colors .duration-150 .bg-purple-600 .border .border-r-0 .border-purple-600 .rounded-md;
+}
+
+@responsive {
+  .background-gray {
+    background-color: gray !important;
+  }
+  .expandable-expand {
+    max-height: 400px;
+    overflow: hidden;
+    transition: max-height 1.5s;
+  }
+  .expandable-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.75s;
+  }
+}

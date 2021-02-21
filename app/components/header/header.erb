@@ -1,0 +1,40 @@
+<nav data-controller="header" class="items-center p-4 bg-teal-500 shadow-lg">
+  <div class="container flex w-full mx-auto justify-between flex-wrap">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <span class="font-semibold text-xl tracking-tight"><%= link_to "Hatched! (admin)", "/" %></span>
+    </div>
+    <% if user_signed_in %>
+      <div class="block lg:hidden">
+        <button data-action="click->header#toggleMenu" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+      <div data-target="header.menu" class="z-50 w-full block flex-grow lg:flex lg:items-center lg:w-auto lg:expandable-expand md:expandable-collapse">
+        <div class="text-sm lg:flex-grow">
+          <% tabs.each_with_index do |tab, index| %>
+            <% if request.fullpath.start_with? tab[:path] %>
+              <div class="<%= disabled_tab_class(index) %>"><%= tab[:label] %></div>
+            <% else %>
+              <%= link_to tab[:label], tab[:path], class: tab_class(index) %>
+            <% end %>
+          <% end %>
+        </div>
+        <% unless @button_title.nil? %>
+          <div>
+            <div data-action="click->header#toggleUserOptions" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">
+              <%= @button_title %>
+            </div>
+            <div data-target="header.userOptions" data-action="mouseleave->header#toggleUserOptions" class="bg-white mt-2 absolute z-50 max-w-sm rounded overflow-hidden shadow-lg expandable-collapse">
+              <div class="px-6 pt-4 pb-2">
+                <ul>
+                  <li class="text-teal-600 hover:text-teal-300 text-sm"><%= link_to "Profile", edit_user_registration_path, class: "" %></li>
+                  <li class="text-teal-600 hover:text-teal-300 text-sm"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "" %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</nav>

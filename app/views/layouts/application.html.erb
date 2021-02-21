@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hatched</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="flex flex-col bg-gray-100">
+    <%= render(Header::Header.new(tabs: [{label: 'Users', path: users_path}, {label: 'Skills', path: '/skills'}], button_title: 'John Doe', user_signed_in: user_signed_in?)) do %><% end %>
+    <div class="container self-center p-10 flex">
+      <div class="w-full items-center flex flex-col">
+        <p class="notice mb-6 text-teal-600"><%= notice %></p>
+        <p class="alert mb-6 text-red-600"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
